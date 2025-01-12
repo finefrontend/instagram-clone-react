@@ -71,6 +71,15 @@ const Main = () => {
     [feedList]
   );
 
+  const handleUpdateFeed = useCallback(
+    (id) => {
+      navigate(`/update-feed/${id}`, {
+        state: [...feedList],
+      });
+    },
+    [feedList, navigate]
+  );
+
   return (
     <section id="container">
       <header id="header_section">
@@ -125,6 +134,7 @@ const Main = () => {
               <Feed
                 key={`feed_${profile}_${nickname}_${index}`}
                 handleDeleteFeed={handleDeleteFeed}
+                handleUpdateFeed={handleUpdateFeed}
                 contentNo={contentNo}
                 nickname={nickname}
                 profile={profile}

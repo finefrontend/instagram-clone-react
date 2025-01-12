@@ -11,6 +11,10 @@ const App = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/create-feed" element={<CreateFeedPage />} />
+      <Route
+        path="/update-feed/:id"
+        element={<CreateFeedPage isUpdatePage />}
+      />
     </Routes>
   );
 };

@@ -10,6 +10,7 @@ export default function Feed({
   likeCount,
   text,
   handleDeleteFeed,
+  handleUpdateFeed,
 }) {
   const [isOpenMorePopup, setIsOpenMorePopup] = useState(false);
   const handleClickMoreButton = useCallback(() => {
@@ -37,7 +38,7 @@ export default function Feed({
           />
 
           <ul className={`more_popup ${isOpenMorePopup && 'active'}`}>
-            <li>수정</li>
+            <li onClick={() => handleUpdateFeed(contentNo)}>수정</li>
             <li onClick={() => handleDeleteFeed(contentNo)}>삭제</li>
           </ul>
         </div>
